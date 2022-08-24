@@ -1,0 +1,14 @@
+.bubble {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px;
+  border-radius: 25px;
+}
+
+.text {
+  display: inline;
+}
+
+.container {
+  max-width: 300px;
+}

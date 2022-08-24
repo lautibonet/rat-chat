@@ -1,0 +1,11 @@
+.form {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+}
+
+.messagesContainer {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,26 @@
+.button__google:active {
+    transform: translateY(3px);
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+.button__google {
+    padding: 16px 32px;
+    border: 1px solid;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: none;
+    box-shadow: 0px 3px 0px 0px #303b50;
+    -webkit-box-shadow: 0px 3px 0px 0px #303b50;
+    -moz-box-shadow: 0px 3px 0px 0px #303b50;
+}
+
+.button__google > svg {
+    margin-right: 8px;
+}

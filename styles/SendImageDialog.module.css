@@ -1,0 +1,26 @@
+.sendImageDialog {
+  margin: auto;
+  background-color: #0b1929;
+  color: #fff;
+}
+
+.image {
+  width: 100%;
+}
+
+.dialogContent {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.title button {
+  margin-right: 8px;
+}
