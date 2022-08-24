@@ -1,6 +1,8 @@
 
 # Rat Chat
 
+[Link to app](https://rat-chat.vercel.app/)
+
 ## Description
 
 Rat Chat is a simple chat web application developed using [NextJs](https://nextjs.org/) react framework, with [Firebase](https://firebase.google.com/) as backend platform and deployed with [Vercel](https://vercel.com/)
