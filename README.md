@@ -1,34 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Rat Chat
 
-First, run the development server:
+[Link to app](https://rat-chat.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Description
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Rat Chat is a simple chat web application developed using [NextJs](https://nextjs.org/) react framework, with [Firebase](https://firebase.google.com/) as backend platform and deployed with [Vercel](https://vercel.com/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The project started as a hobby development in response to one of [Mouredev's monthly Challanges](https://github.com/mouredev/Monthly-App-Challenge-2022): Firebase Chat.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+## How it works
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- The application has a screen where you will have to login with your Google account.
+- Once logged in, you will be able to select another registered user to chat with from a list.
+- The chat will start.
 
-## Learn More
+## Authentication
 
-To learn more about Next.js, take a look at the following resources:
+- On the main screen you will have to use a Google account to access the App. The registration is persisted in Firebase. If you are already logged in, this screen will not be shown.
+- Once logged in, you have the possibility to logout by clicking your avatar on the top right corner.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Chat
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Chats are in real time and the conversations will be saved, this means that every time you return to the chat room you will be able to consult the previous messages.
+- As in most chats, your answers will be aligned to the right and those of the other users to the left.
 
-## Deploy on Vercel
+## Messages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Currently, the app allows the users send texts and images.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Design
+
+- Rat Chat was designed using **mobile-first strategy**.
+
+## Screens
+
+![image](https://user-images.githubusercontent.com/8452417/186327855-10f8fa8a-cf28-4a23-ae70-471a8951ddb0.png)
+
+![image](https://user-images.githubusercontent.com/8452417/186327971-0b9d6df6-7744-4567-8d98-7c0e3786873d.png)
+
+![image](https://user-images.githubusercontent.com/8452417/186328273-f5fc1f71-77c2-474a-a3a1-de3e4a981686.png)
