@@ -1,4 +1,12 @@
-import { doc, setDoc, getDocs, collection, getDoc } from 'firebase/firestore'
+import {
+  doc,
+  setDoc,
+  collection,
+  getDoc,
+  query,
+  onSnapshot,
+} from 'firebase/firestore'
+import { useEffect, useState } from 'react'
 import { getDB } from '../client'
 
 const saveUser = ({ displayName, email, photoURL }) => {
@@ -19,20 +27,6 @@ const saveUser = ({ displayName, email, photoURL }) => {
   }
 }
 
-const getAllUsers = (callback) => {
-  const db = getDB()
-  getDocs(collection(db, 'users')).then((querySnapshot) => {
-    const data = []
-    querySnapshot.forEach((doc) => {
-      data.push({
-        id: doc.id,
-        ...doc.data(),
-      })
-    })
-    callback(data)
-  })
-}
-
 const getUser = async (userId) => {
   const db = getDB()
   const userRef = doc(db, 'users', userId)
@@ -43,4 +37,29 @@ const getUser = async (userId) => {
   }
 }
 
-export { saveUser, getAllUsers, getUser }
+export default function useUsers() {
+  const [users, setUsers] = useState([])
+  const db = getDB()
+  const q = query(collection(db, 'users'))
+
+  useEffect(() => {
+    const unsubscribe = onSnapshot(q, (querySnapshot) => {
+      const data = []
+      querySnapshot.forEach((doc) => {
+        data.push({
+          id: doc.id,
+          ...doc.data(),
+        })
+      })
+      setUsers(data)
+    })
+
+    return () => unsubscribe()
+  }, [])
+
+  return {
+    users,
+  }
+}
+
+export { saveUser, getUser }

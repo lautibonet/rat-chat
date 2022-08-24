@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import Protected from '../auth/protectedRoute'
 import UserList from '../components/UserList'
-import { getAllUsers } from '../firebase/repository/user'
+import useUsers, { getAllUsers } from '../firebase/repository/user'
 import CircularProgress from '@mui/material/CircularProgress'
 import RatChatAppBar from '../components/RatChatAppBar'
 import Tooltip from '@mui/material/Tooltip'
@@ -17,65 +17,12 @@ import { useAuth } from '../auth/authUserProvider'
 import getChat from '../firebase/repository/chat'
 import { useRouter } from 'next/router'
 import RatChatLogo from '../components/RatChatLogo'
-import useFirebaseAuth from '../auth/firebaseAuth'
-
-const UserActions = (props) => {
-  const [menuAnchor, setMenuAnchor] = useState(null)
-
-  const handleOpenUserMenu = (event) => {
-    setMenuAnchor(event.currentTarget)
-  }
-
-  const handleCloseUserMenu = () => {
-    setMenuAnchor(null)
-  }
-
-  const { logout } = useFirebaseAuth()
-
-  return (
-    <>
-      <Tooltip title={props.user.displayName}>
-        <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-          <Avatar
-            alt={props.user.displayName}
-            src={props.user.photoURL}
-            referrerPolicy="no-referrer"
-          />
-        </IconButton>
-      </Tooltip>
-
-      <Menu
-        sx={{ mt: '45px' }}
-        id="menu-appbar"
-        anchorEl={menuAnchor}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        keepMounted
-        transformOrigin={{
-          vertical: 'top',
-          horizontal: 'right',
-        }}
-        open={Boolean(menuAnchor)}
-        onClose={handleCloseUserMenu}
-      >
-        <MenuItem onClick={handleCloseUserMenu}>
-          <span onClick={() => logout()}>Logout</span>
-        </MenuItem>
-      </Menu>
-    </>
-  )
-}
+import UserActions from '../components/UserAcctions'
 
 const Home = () => {
-  const [users, setUsers] = useState(null)
+  const { users } = useUsers()
   const { authUser } = useAuth()
   const router = useRouter()
-
-  useEffect(() => {
-    getAllUsers((users) => setUsers(users))
-  }, [])
 
   const onUserClick = (clickedUserEmail) => {
     const fetchChat = async () => {
