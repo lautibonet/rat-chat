@@ -13,9 +13,6 @@ const RatChatAppBar = (props) => {
     <AppBar
       position="static"
       style={appBarStyles}
-      sx={{
-        backgroundColor: 'secondary.light',
-      }}
       elevation={props.elevation || 0}
     >
       <Toolbar disableGutters>
