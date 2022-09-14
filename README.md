@@ -4,7 +4,7 @@
 
 ## Description
 
-Rat Chat is a simple chat web application developed using [NextJs](https://nextjs.org/) react framework, with [Firebase](https://firebase.google.com/) as backend platform and deployed with [Vercel](https://vercel.com/)
+Rat Chat is a simple chat web application developed using [NextJs](https://nextjs.org/) react framework, with [Firebase](https://firebase.google.com/) as backend platform and deployed on [Vercel](https://vercel.com/)
 
 The project started as a hobby development in response to one of [Mouredev's monthly Challanges](https://github.com/mouredev/Monthly-App-Challenge-2022): Firebase Chat.
 
